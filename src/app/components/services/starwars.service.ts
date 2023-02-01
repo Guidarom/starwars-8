@@ -15,7 +15,9 @@ export class StarwarsService {
 
 
   getShips(){
-    this.http.get('https://swapi.dev/api/starships')
+    
+    this.http.get('https://starpi.herokuapp.com/starpi/starships/1')
+    //this.http.get('https://swapi.dev/api/starships')    esta api es mas lenta
         .subscribe((resp:any)=>{
           console.log(resp.results)
           this.starShipsList= resp.results
