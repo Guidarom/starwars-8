@@ -1,18 +1,25 @@
 <p>Listado Starships</p>
 
-<ul>
-    <li *ngFor="let item of starShipsList">
+
+
+<!-- con el siguiente codigo verifico que mi ngFor funciona
+    <ul>
+    <li *ngFor="let item of starShipsList"> 
         {{item.name}}
 
     </li>
-</ul>
+</ul> -->
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-8" *ngFor=" let item of starShipsList">
         <div class=" card">
             <div class="card-body">
                 <p class="card-text">
-                       Blabla 
+                    <strong>{{item.name}}</strong>                 
+                    
+                </p>
+                <p class="card-text">
+                    {{item.model}}
                 </p>
 
             </div>
