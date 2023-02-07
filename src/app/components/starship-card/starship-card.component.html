@@ -1,0 +1,57 @@
+
+<div class="row ">
+    <div class="col-12 d-flex justify-content-center py-3">
+        <div class="card back-image text-white ">
+            <div class="card-body py-0 ">
+                <div class="row ">
+                    <div class="col-12 d-flex justify-content-center ">
+                        <div class="card border-0 card-child ">
+                            <div class="card-body text-center py-0">
+                                <h3 class="py-0"> {{currentShip.name}}</h3>
+                                    <img src="{{ urlImg }}/{{ id }}.jpg"
+                                    Onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+                                    class="card-img-top " 
+                                    alt="{{ currentShip.name }}">               
+                                    <p class="p-0 m-0 card-text"><strong>MODEL:</strong> {{currentShip.model}}</p>
+                                    <p class="p-0 m-0 card-text"> <strong>STARSHIP CLASS:</strong> {{currentShip.starship_class}}</p>
+                                    <p class="p-0 m-0 card-text"> <strong>MANUFACTURER:</strong> {{currentShip.manufacturer}}</p>
+                                    <p class="p-0 m-0 card-text"> <strong>COST:</strong> {{currentShip.cost_in_credits}} credits</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- A partir ded aqui vienen las tarjetas pequeñas-->
+            <div class="row">
+                <div class="col-12 col-md-6 px-0">
+                    <div class="card border-0 card-child "card-child>
+                        <div class="card-body ">
+                            <p class="p-0 m-0 card-text"><strong>CREW:</strong> {{currentShip.crew}}</p>
+                        <p class="p-0 m-0 card-text"> <strong>PASSENGER CAPACITY:</strong> {{currentShip.passengers}}</p>
+                        <p class="p-0 m-0 card-text"> <strong>CARGO CAPACITY:</strong> {{currentShip.cargo_capacity}} tons</p>
+                        <p class="p-0 m-0 card-text"> <strong>CONSUMABLES:</strong> {{currentShip.consumables}}</p>       
+                        </div>       
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 px-0">
+                    <div class="card border-0 card-child ">
+                        <div class="card-body">
+                            <p class="p-0 m-0 card-text"><strong>LENGTH:</strong> {{currentShip.length}}</p>
+                        <p class="p-0 m-0 card-text"> <strong>MAXIMUM ATMOSPHERING SPEED:</strong> {{currentShip.max_atmosphering_speed}} KM/H</p>
+                        <p class="p-0 m-0 card-text"> <strong>HIPERDRIVE RATING:</strong> {{currentShip.hyperdrive_rating}}</p>
+                        <p class="p-0 m-0 card-text"> <strong>MAXIMUN SPEED IN REALSPACE:</strong> {{currentShip.MGLT}} MGLT</p>       
+                        </div>       
+                    </div>
+                </div>
+                
+            </div>
+        
+
+        </div>
+
+    </div>
+
+</div>

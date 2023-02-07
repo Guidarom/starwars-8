@@ -10,23 +10,32 @@
     </li>
 </ul> -->
 
-<div class="row">
-    <div class="col-8" *ngFor=" let item of starShipsList">
-        <div class=" card">
-            <div class="card-body">
-                <p class="card-text">
-                    <strong>{{item.name}}</strong>                 
-                    
-                </p>
-                <p class="card-text">
-                    {{item.model}}
-                </p>
-
+    <div class="row">
+        <div class="col-8 "  
+            [routerLink]="['/starships/' ,ship | id]" 
+             *ngFor=" let ship of starShipsList; let i=index" 
+            infinite-scroll
+            [infiniteScrollDistance]="4"  
+            [infiniteScrollThrottle]="2000" 
+            (scrolled)="onScroll()">
+            <div class=" card" >
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>{{ship.name}}</strong>                 
+                        
+                    </p>
+                    <p class="card-text">
+                        {{ship.model}}
+                    </p>
+    
+                </div>
+    
             </div>
-
+    
         </div>
-
+    
     </div>
+    
 
-</div>
+<!-- <app-starship-card ></app-starship-card> da problemas con el observable y on init de cardShip--> 
 
