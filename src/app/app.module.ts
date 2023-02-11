@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 
 
 import { componentsModule } from './components/components.module';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
 
   ],
   imports: [

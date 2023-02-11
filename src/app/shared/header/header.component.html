@@ -1,0 +1,58 @@
+<!-- <h1 class="text-white">header works!</h1> -->
+<header class="back-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-12 col-md-4">
+                <nav class="navbar navbar-expand-lg p-2">
+                    <div class="container justify-content-center">
+                        <div class="navbar-brand mx-auto " href="#">
+                        <img  class="p-2 " src='../../../assets/img/star-wars-logo.png' width='200px'/>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- aqui va login -->
+            <div class="col-md-4 justify-content-center justify-content-md-end text-center text-md-end align-self-center">
+
+                <a  class=' btn border-white text-white m-1 '
+                [routerLink]="['']">
+                Login
+                </a>
+                <a  class=' btn text-white m-1 '
+                [routerLink]="['']">
+                Sign Up
+                </a>
+            </div>
+
+            <!-- aqui va otro navegador -->
+            
+              
+            
+
+        </div>
+
+    </div>
+
+    <div class="row align-self-center border-dark border-2 border-top border-bottom">
+        <div class="col-12 col-md-6 border-dark border-2 border-end justify-content-center justify-content-md-end text-center text-md-end p-1">
+            <a class='text-white m-1 '
+            [routerLink]="['']">
+            Home
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 justify-content-center justify-content-md-start text-center text-md-start p-1">
+            <a  class='text-white m-1 '
+            [routerLink]="['/starships']">
+            Starships
+            </a>
+        </div>
+    </div>
+
+</header>
+
+ 

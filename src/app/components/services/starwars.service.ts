@@ -5,9 +5,7 @@ import { HttpClient,} from '@angular/common/http';
 import { Result,Starships } from '../interfaces/starships';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class StarwarsService {
 
   constructor ( private http:HttpClient) { }
