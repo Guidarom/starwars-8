@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { StarshipCardComponent } from './starship-card/starship-card.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,13 +18,17 @@ import { RouterModule } from '@angular/router';
         HomeComponent,
         IdPipe,
         StarshipsComponent,
-        StarshipCardComponent
+        StarshipCardComponent,
+        LoginComponent,
+        RegisterComponent
     ],
     exports:[
         HomeComponent
     ],
     imports:[
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         InfiniteScrollModule,
         RouterModule
     ]

@@ -29,7 +29,7 @@ export class StarshipsComponent implements OnInit{
     this.starwarsService.getShips(this.page)
       .subscribe(resp => {
         this.starShipsList =resp.results
-        console.log(resp)
+        //console.log(resp)
       })
   }
 
@@ -45,7 +45,7 @@ export class StarshipsComponent implements OnInit{
     this.starwarsService.getShips(++this.page)
       .subscribe((response: Starships) => {
         this.starShipsList.push(...response.results);
-        console.log('loaded',this.starShipsList)
+        //console.log('loaded',this.starShipsList)
       })
   }
 

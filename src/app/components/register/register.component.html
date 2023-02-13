@@ -1,0 +1,91 @@
+
+
+    <div class="row align-content-center fixed-top py-5  ">
+        <div class="col-11 mx-auto py-4" style="max-width: 450px;">
+            <div class="card  text-white bg-dark h-100">
+                <div class="card-header text-center text-warning">
+                    <h3>Create your account</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup] ="signupForm" (ngSubmit)="send()"  class="g-3">
+                        <div class="form-group my-3">
+                            <input  
+                                    type="text" 
+                                    formControlName="name"
+                                    class="form-control" 
+                                    placeholder="your name" >
+                                    
+                        </div>
+                        <div class="form-group my-3">
+                            <input  
+                                    type="email" 
+                                    formControlName="email"                                                                     
+                                    class="form-control" 
+                                    placeholder="exemple@mail.com" >
+                                    <span class="form-text text-danger mt-0 mb-0"
+                                          *ngIf="required('email')">Please enter a correct email</span>
+                                    
+                        </div>
+                        <div class="form-group my-3">
+                            <input 
+                                    type="password" 
+                                    formControlName="password"                                   
+                                    class="form-control" 
+                                    placeholder="Password" >
+                                    <span class="form-text text-danger mt-0 mb-0"
+                                          *ngIf="required('password')">Please enter a correct password</span>
+                        </div>
+                        <div class="text-center col-12">
+                            <button [disabled]="signupForm.invalid" type="submit" class="btn btn-warning btn-block" >Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!-- esta parte funciona con ng model
+    
+    <div class="row align-content-center fixed-top py-5  ">
+        <div class="col-11 mx-auto py-4" style="max-width: 450px;">
+            <div class="card  text-white bg-dark h-100">
+                <div class="card-header text-center">
+                    <h3>Create your account</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup] ="signupForm"    action="signUp()"   class="g-3">
+                        <div class="form-group my-3">
+                            <input id="newName" 
+                                    type="text" 
+                                    [(ngModel)]="user.name" 
+                                    name="name" 
+                                    class="form-control" 
+                                    placeholder="your name" >
+                        </div>
+                        <div class="form-group my-3">
+                            <input id="newEmail" 
+                                    type="email" 
+                                    [(ngModel)]="user.email" 
+                                    name="email" 
+                                    class="form-control" 
+                                    placeholder="exemple@me.com" >
+                        </div>
+                        <div class="form-group my-3">
+                            <input id="newPassword" 
+                                    type="password" 
+                                    [(ngModel)]="user.password" 
+                                    name="password" 
+                                    class="form-control" 
+                                    placeholder="Password" >
+                        </div>
+                        <div class="text-center col-12">
+                            <button type="submit" class="btn btn-warning btn-block" (click)="signUp()">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
