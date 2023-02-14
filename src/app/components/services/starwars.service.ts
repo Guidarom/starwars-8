@@ -14,9 +14,8 @@ export class StarwarsService {
   
   
   getShips(page:number):Observable<Starships>{
-    //https://swapi.dev/api/starships/1
     
-    //this.http.get('https://swapi.dev/api/starships')    esta api es mas lenta
+    //this.http.get('https://swapi.dev/api/starships/1')    esta api es mas lenta
     return this.http.get<Starships>(`https://starpi.herokuapp.com/starpi/starships/${page}`)
 
 
