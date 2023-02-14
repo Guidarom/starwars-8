@@ -45,8 +45,6 @@ signupForm:FormGroup
         password:this.signupForm.value.password
 
       }
-
-
       if(this.signupForm.valid){
         this.usersList.push(newUser)
         
