@@ -1,4 +1,4 @@
-<!-- <h1 class="text-white">header works!</h1> -->
+
 <header class="back-header">
     <div class="container">
         <div class="row">
@@ -18,19 +18,20 @@
             <!-- aqui va login -->
             <div class="col-md-4 justify-content-center justify-content-md-end text-center text-md-end align-self-center">
 
-                <a  class=' btn border-white text-white m-1 '
+                <a  *ngIf="!isLogged" class=' btn border-white text-white m-1 '
                 [routerLink]="['login']">
                 Login
                 </a>
-                <a  class=' btn text-white m-1 '
+                <a  *ngIf="isLogged" class=' btn border-white text-white m-1 '
+                (click)="loginOut()" [routerLink]="['']">
+                Login out
+                </a>
+                <a  *ngIf="!isLogged" class=' btn text-white m-1 '
                 [routerLink]="['register']">
                 Sign Up
                 </a>
             </div>
 
-            <!-- aqui va otro navegador -->
-            
-              
             
 
         </div>

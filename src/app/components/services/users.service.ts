@@ -7,8 +7,14 @@ import { User } from '../interfaces/users';
 export class UsersService {
 
   constructor() { }
+  isLogged:boolean = false
 
   usersList:User[]=[]
+
+  loginOut(){
+    this.isLogged=false
+    console.log('deu siau')
+  }
 
 
   saveToLocalStorage(list: User[]) {

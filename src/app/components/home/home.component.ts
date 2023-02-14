@@ -11,7 +11,10 @@ import { NgbCarouselConfig }  from '@ng-bootstrap/ng-bootstrap';
 export class HomeComponent {
 
 
-  constructor( private _config:NgbCarouselConfig){}
+  constructor( private _config:NgbCarouselConfig){
+    _config.interval=2500;
+    _config.pauseOnHover=true;
+  }
 
   series:any[]=[
 

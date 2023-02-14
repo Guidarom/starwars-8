@@ -10,7 +10,6 @@ export class StarwarsService {
 
   constructor ( private http:HttpClient) { }
 
-  //CAmbiar any por su verdadero valor
   public starShipsList:Result []=[];
   
   
@@ -29,10 +28,7 @@ export class StarwarsService {
     return this.http.get<Result>(`https://swapi.dev/api/starships/${id}/`)
 
 }
-  
-    
-    
-    }
+}
 
 
 

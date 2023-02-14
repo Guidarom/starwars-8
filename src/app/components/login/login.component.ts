@@ -42,6 +42,12 @@ export class LoginComponent implements OnInit {
     return this.userService.usersList
 
   }
+  get isLogged(){
+    return this.userService.isLogged
+  }
+  set isLogged(value){
+    this.userService.isLogged=value
+  }
   login(){
     const currentUser: User={
       email:this.signInForm.value.email,
@@ -51,11 +57,14 @@ export class LoginComponent implements OnInit {
 
     if(this.signInForm.valid){
       const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
-      foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.name}`),(this.router.navigate(['./starships'])))
+      foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.name}`),
+      (this.router.navigate(['./starships'])),
+      (this.isLogged=true))
       : alert('try it again!')
 
     
     }
+    console.log(this.isLogged)
 
   }
 

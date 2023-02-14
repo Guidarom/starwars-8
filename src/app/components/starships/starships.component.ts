@@ -29,14 +29,8 @@ export class StarshipsComponent implements OnInit{
     this.starwarsService.getShips(this.page)
       .subscribe(resp => {
         this.starShipsList =resp.results
-        //console.log(resp)
       })
   }
-
-  /*  getShipCard(num:number){
-    
-    return this.starwarsService.getShipCard(num) 
-  } */
 
   onScroll(): void {
     if (this.page === 4) {
@@ -45,7 +39,6 @@ export class StarshipsComponent implements OnInit{
     this.starwarsService.getShips(++this.page)
       .subscribe((response: Starships) => {
         this.starShipsList.push(...response.results);
-        //console.log('loaded',this.starShipsList)
       })
   }
 
