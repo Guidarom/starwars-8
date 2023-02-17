@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'starships/:id',component:StarshipCardComponent,canActivate:[AuthGuard]},// :id es para asignarle una ruta a cada nave con su id creado en pipe
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path: '**',redirectTo: ''}
+ // {path: '**',redirectTo: ''}
 
 ];
 

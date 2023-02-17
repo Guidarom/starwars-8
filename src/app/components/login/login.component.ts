@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../services/users.service';
 import { User } from '../interfaces/users';
+import { StarwarsService } from '../services/starwars.service';
+import { STRING_TYPE } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +13,22 @@ import { User } from '../interfaces/users';
 })
 export class LoginComponent implements OnInit {
 
-  signInForm:FormGroup
+  signInForm:FormGroup;
+ // private redirectUrl:any ='';
+
+  get redirectUrl(){
+    return this.userService.redirectUrl
+  }
+
+  set redirectUrl(value:any){
+    this.userService.redirectUrl =value
+  }
 
   constructor(
     private router: Router,
     private builder:FormBuilder,
-    private userService:UsersService
+    private userService:UsersService,
+    private  activatedRoute :ActivatedRoute
   ){
     this.signInForm=this.builder.group({
       email:['',Validators.compose([Validators.email,Validators.required])],
@@ -29,13 +41,18 @@ export class LoginComponent implements OnInit {
     return this.signInForm.controls[field].errors && this.signInForm.controls[field].touched
     }
 
-
-
-
   ngOnInit(): void {
+    this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get('redirectUrl')||'/';
     this.userService.getListFromLocalStorage('list');
-    console.log(this.usersList)
+    this.newUrl(this.redirectUrl)
+
+    console.log(this.redirectUrl);
+  
     
+  }
+
+  newUrl(value:any){
+    this.userService.newUrl(value)
   }
 
   get usersList(){
@@ -44,9 +61,6 @@ export class LoginComponent implements OnInit {
   }
   get isLogged(){
     return this.userService.isLogged
-  }
-  set isLogged(value){
-    this.userService.isLogged=value
   }
   login(){
     const currentUser: User={
@@ -58,14 +72,12 @@ export class LoginComponent implements OnInit {
     if(this.signInForm.valid){
       const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
       foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.name}`),
-      (this.router.navigate(['./starships'])),
-      (this.isLogged=true))
+      (this.router.navigateByUrl(this.redirectUrl)),
+      (this.userService.logginTrue()))      
       : alert('try it again!')
-
-    
     }
-    console.log(this.isLogged)
-
+    
+    
   }
 
 

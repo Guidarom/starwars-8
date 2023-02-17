@@ -10,12 +10,27 @@ export class UsersService {
   isLogged:boolean = false
 
   usersList:User[]=[]
+  redirectUrl:any =''
 
   loginOut(){
     this.isLogged=false
+    this.redirectUrl=''
+    localStorage.removeItem('value')
     console.log('deu siau')
+
   }
 
+  logginTrue(){
+    this.isLogged=true
+  }
+  newUrl(value:any){
+    value = this.redirectUrl
+    localStorage.setItem('value',JSON.stringify(value)),
+    console.log(localStorage)
+
+    }
+    
+  
 
   saveToLocalStorage(list: User[]) {
     localStorage.setItem('list', JSON.stringify(list))
