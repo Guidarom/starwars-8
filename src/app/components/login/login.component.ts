@@ -51,6 +51,11 @@ export class LoginComponent implements OnInit {
     }
     
   }
+  removeUrl():void{
+    this.userService.removeUrl()
+    //console.log('remove works')
+    }
+
 
   newUrl(value:any){
       this.userService.newUrl(value)

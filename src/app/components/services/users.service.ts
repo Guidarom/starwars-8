@@ -14,14 +14,17 @@ export class UsersService {
 
   loginOut(){
     this.isLogged=false
+    this.removeUrl()
+    console.log('deu siau')
+  }
+
+
+  removeUrl(){
     if(this.redirectUrl!==''){
       localStorage.removeItem('value')
       this.redirectUrl=''
+      console.log(this.redirectUrl)
     }
-    
-   
-    console.log('deu siau')
-
   }
 
   logginTrue(){

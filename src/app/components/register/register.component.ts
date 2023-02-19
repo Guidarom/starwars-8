@@ -51,6 +51,10 @@ signupForm:FormGroup;
     console.log(this.redirectUrl)
   }
   
+  removeUrl():void{
+    this.userService.removeUrl()
+    //console.log('remove works')
+    }
 
     required( field : string){
     return this.signupForm.controls[field].errors && this.signupForm.controls[field].touched
