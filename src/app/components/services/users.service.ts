@@ -14,8 +14,12 @@ export class UsersService {
 
   loginOut(){
     this.isLogged=false
-    this.redirectUrl=''
-    localStorage.removeItem('value')
+    if(this.redirectUrl!==''){
+      localStorage.removeItem('value')
+      this.redirectUrl=''
+    }
+    
+   
     console.log('deu siau')
 
   }
@@ -26,6 +30,7 @@ export class UsersService {
   newUrl(value:any){
     value = this.redirectUrl
     localStorage.setItem('value',JSON.stringify(value)),
+    console.log('guardado new url')
     console.log(localStorage)
 
     }

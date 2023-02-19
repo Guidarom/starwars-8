@@ -36,11 +36,19 @@ signupForm:FormGroup;
     return this.userService.usersList
 
   }
+  get redirectUrl(){
+    return this.userService.redirectUrl
+  }
+  set redirectUrl(value:any){
+    this.userService.redirectUrl = value
+  }
   
   ngOnInit(): void {
-    //this.userService.getListFromLocalStorage('value');
-    this.userService.redirectUrl= JSON.parse(localStorage.getItem('value')!)
-    console.log(this.userService.redirectUrl)
+      this.redirectUrl= JSON.parse(localStorage.getItem('value')!)
+    /*   if(this.redirectUrl===(null|| undefined)){
+        this.redirectUrl=''
+      } */
+    console.log(this.redirectUrl)
   }
   
 
@@ -60,30 +68,13 @@ signupForm:FormGroup;
         this.usersList.push(newUser),
         this.userService.logginTrue(),
         this.userService.saveToLocalStorage(this.usersList),  
-        this.router.navigateByUrl(this.userService.redirectUrl)
+        this.router.navigateByUrl(this.redirectUrl)
         
-      
-      
       }
       
-      
+      this.signupForm.markAllAsTouched();
     }
   
-
-
-
-  //esta parte funciona con ngmodel
-/* 
-  user ={
-    name:'',
-    email:'',
-    password:''
-  }
-
-  signUp(){
-    console.log(this.user)
-
-} */
 
 
 }

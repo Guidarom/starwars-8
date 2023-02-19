@@ -42,17 +42,18 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get('redirectUrl')||'/';
+    this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get('redirectUrl')||'';
     this.userService.getListFromLocalStorage('list');
-    this.newUrl(this.redirectUrl)
-
-    console.log(this.redirectUrl);
-  
+    console.log(this.redirectUrl)
+    if (this.redirectUrl!=='') {
+      this.newUrl(this.redirectUrl)
+      console.log( 'run login')
+    }
     
   }
 
   newUrl(value:any){
-    this.userService.newUrl(value)
+      this.userService.newUrl(value)
   }
 
   get usersList(){
@@ -76,8 +77,7 @@ export class LoginComponent implements OnInit {
       (this.userService.logginTrue()))      
       : alert('try it again!')
     }
-    
-    
+    this.signInForm.markAllAsTouched()  
   }
 
 
