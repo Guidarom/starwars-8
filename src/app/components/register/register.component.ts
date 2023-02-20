@@ -44,17 +44,19 @@ signupForm:FormGroup;
   }
   
   ngOnInit(): void {
-      this.redirectUrl= JSON.parse(localStorage.getItem('value')!)
+
+      //this.redirectUrl= JSON.parse(localStorage.getItem('value')!)
     /*   if(this.redirectUrl===(null|| undefined)){
         this.redirectUrl=''
       } */
     console.log(this.redirectUrl)
   }
   
-  removeUrl():void{
+  // el codigo siguiente guarda la nueva url en local storage
+  /* removeUrl():void{
     this.userService.removeUrl()
     //console.log('remove works')
-    }
+    } */
 
     required( field : string){
     return this.signupForm.controls[field].errors && this.signupForm.controls[field].touched

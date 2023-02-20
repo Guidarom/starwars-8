@@ -44,22 +44,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get('redirectUrl')||'';
     this.userService.getListFromLocalStorage('list');
+    
     console.log(this.redirectUrl)
-    if (this.redirectUrl!=='') {
+
+   /*  if (this.redirectUrl!=='') {
       this.newUrl(this.redirectUrl)
       console.log( 'run login')
-    }
+    } */
     
   }
-  removeUrl():void{
+  
+ /*  removeUrl():void{
     this.userService.removeUrl()
     //console.log('remove works')
-    }
+    } */
 
 
-  newUrl(value:any){
-      this.userService.newUrl(value)
-  }
+  /* newUrl(){
+      this.userService.newUrl()
+  } */
 
   get usersList(){
     return this.userService.usersList

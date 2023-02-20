@@ -14,29 +14,30 @@ export class UsersService {
 
   loginOut(){
     this.isLogged=false
-    this.removeUrl()
+    //this.removeUrl()
     console.log('deu siau')
   }
 
 
-  removeUrl(){
+ /*  removeUrl(){
     if(this.redirectUrl!==''){
       localStorage.removeItem('value')
       this.redirectUrl=''
       console.log(this.redirectUrl)
     }
-  }
+  } */
 
   logginTrue(){
     this.isLogged=true
   }
-  newUrl(value:any){
-    value = this.redirectUrl
-    localStorage.setItem('value',JSON.stringify(value)),
-    console.log('guardado new url')
-    console.log(localStorage)
+  
+  /* newUrl(){
+    
 
-    }
+     value = this.redirectUrl
+    localStorage.setItem('value',JSON.stringify(value)), 
+
+    } */
     
   
 

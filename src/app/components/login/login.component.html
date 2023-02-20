@@ -8,8 +8,7 @@
                 </div>
                 <div class="col-3 col-sm-2">
                     <a  class=' btn border-white text-end text-white m-1 '
-                        [routerLink]="['']"
-                        (click)="removeUrl()">
+                        [routerLink]="['']">
                     X
                     </a>
                 </div>               
@@ -43,7 +42,7 @@
                         <button type="submit" class="btn btn-warning btn-block" >Log in</button>
                     </div>
                     <div class=" col-12" >
-                        <a class="new" href="register">Create an account</a>
+                        <a class="new" [routerLink]="['/register']">Create an account</a>
                     </div>
                 </form>
             </div>
