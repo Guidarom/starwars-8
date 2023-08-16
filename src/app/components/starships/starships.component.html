@@ -1,6 +1,6 @@
     <div class="container">
         <div class="row d-flex justify-content-center">  
-            <div class="col-8 p-2"  
+            <div class="col-8 p-2 box-pointer"  
                 [routerLink]="['/starships/' ,ship | id]" 
                  *ngFor=" let ship of starShipsList; let i=index" 
                 infinite-scroll
